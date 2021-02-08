@@ -104,6 +104,44 @@ body {
 // LOGIN SECTION
 ////////////////////
 
+.login-container {
+  display: flex;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  .middle {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .inner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+    text-align: center;
+  }
+
+  .logo {
+    display: block;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+
+  .login-btn {
+    background: white;
+    color: black;
+    padding: 10px 20px;
+    font-size: 24px;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+      background-color: #eee;
+    }
+  }
+}
 .centered-container {
   display: table;
   position: absolute;
@@ -162,6 +200,33 @@ pre.code {
   overflow: auto;
   background: $dark-background;
 }
+
+// start custom css change
+
+.auth-image-slider-container {
+  background-color: #fff;
+}
+
+.no-padding {
+  padding: 0px;
+}
+
+.aws-btn {
+  --slider-height-percentage: 60%;
+  --slider-transition-duration: 700ms;
+  --organic-arrow-thickness: 4px;
+  --organic-arrow-border-radius: 0px;
+  --organic-arrow-height: 40px;
+  --organic-arrow-color: #fff !important;
+  --control-button-width: 10%;
+  --control-button-height: 25%;
+  --control-button-background: transparent;
+  --control-bullet-color: #62a4fa;
+  --control-bullet-active-color: #538bd5;
+  --loader-bar-color: transparent;
+  --loader-bar-height: 6px;
+}
+// end custom css change
 
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import './scss/_dropdown.scss';

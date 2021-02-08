@@ -87,6 +87,7 @@
     "plur": "^3.0.1",
     "portfinder": "^1.0.20",
     "querystring": "^0.2.0",
+    "react-awesome-slider": "^4.1.0",
     "redlock": "^3.1.2",
     "reflect-metadata": "^0.1.13",
     "replace-in-file": "^4.1.1",

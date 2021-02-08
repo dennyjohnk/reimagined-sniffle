@@ -36,6 +36,7 @@
     "nanoid": "^2.0.3",
     "query-string": "^5.0.1",
     "react": "16.8.6",
+    "react-awesome-slider": "^4.1.0",
     "react-checkbox-tree": "^1.5.1",
     "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "16.8.6",

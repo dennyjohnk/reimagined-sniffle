@@ -120,7 +120,7 @@ const Menu: FC<MenuProps> = props => {
         />
       </ControlGroup>
 
-      <AccessControl superAdmin={true}>
+      {/* <AccessControl superAdmin={true}>
         <Fragment>
           <div className="bp-sa-menu-header">{lang.tr('admin.sideMenu.management')}</div>
           <ControlGroup vertical={true} fill={true}>
@@ -168,9 +168,9 @@ const Menu: FC<MenuProps> = props => {
             <MenuItem text={lang.tr('admin.sideMenu.debug')} id="btn-menu-debug" icon="console" url="/server/debug" />
           </ControlGroup>
         </Fragment>
-      </AccessControl>
+      </AccessControl> */}
 
-      <div className="bp-sa-menu-header">{lang.tr('admin.sideMenu.announcements')}</div>
+      {/* <div className="bp-sa-menu-header">{lang.tr('admin.sideMenu.announcements')}</div>
       <ControlGroup vertical={true} fill={true}>
         <MenuItem
           text={lang.tr('admin.sideMenu.latestReleases')}
@@ -179,7 +179,7 @@ const Menu: FC<MenuProps> = props => {
           url="/latestReleases"
           tag={renderLatestReleaseTag()}
         />
-      </ControlGroup>
+      </ControlGroup> */}
     </div>
   )
 }
