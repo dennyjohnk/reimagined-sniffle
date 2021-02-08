@@ -238,20 +238,23 @@ export class ConfigProvider {
   public async getBrandingConfig(appName: 'admin' | 'studio') {
     const defaultConfig = {
       admin: {
-        title: 'Botpress Admin Panel',
+        title: 'Admin Panel',
         favicon: 'assets/ui-admin/public/favicon.ico',
         customCss: ''
       },
       studio: {
-        title: 'Botpress Studio',
+        title: 'Studio',
         favicon: 'assets/ui-studio/public/img/favicon.png',
         customCss: ''
       }
     }
 
-    if (!process.IS_PRO_ENABLED) {
-      return defaultConfig[appName]
-    }
+    /***
+     * Commenting the below line to prevent pro restrictions
+     */
+    // if (!process.IS_PRO_ENABLED) {
+    //   return defaultConfig[appName]
+    // }
 
     const config = await this.getBotpressConfig()
     const { title, favicon, customCss } = config.pro?.branding?.[appName] ?? {}

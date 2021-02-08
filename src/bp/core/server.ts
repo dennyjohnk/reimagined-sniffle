@@ -331,7 +331,7 @@ export default class HTTPServer {
 
     this.app.get('/env.js', async (req, res) => {
       const branding = await this.configProvider.getBrandingConfig('admin')
-
+      console.log('am at branding', branding)
       res.contentType('text/javascript')
       res.send(`
       (function(window) {

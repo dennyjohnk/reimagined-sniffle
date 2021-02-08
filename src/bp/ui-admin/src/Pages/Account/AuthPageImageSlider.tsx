@@ -9,7 +9,7 @@ import sliderImage3 from '../../media/slider-image/media-3.png'
 const AuthPageImageSlider = props => {
   return (
     <div>
-      <AwesomeSlider cssModule={AwsSliderStyles} fillParent={true}>
+      <AwesomeSlider cssModule={AwsSliderStyles} fillParent={true} bullets={false} infinite={true}>
         <div data-src={sliderImage1} />
         <div data-src={sliderImage2} />
         <div data-src={sliderImage3} />
