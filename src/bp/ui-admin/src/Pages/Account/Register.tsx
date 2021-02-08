@@ -3,6 +3,7 @@ import React, { FC, useState } from 'react'
 import { RouteComponentProps } from 'react-router'
 import { Redirect } from 'react-router-dom'
 import BasicAuthentication from '~/Auth'
+import { Button } from '@blueprintjs/core'
 
 import { LoginContainer } from '../Layouts/LoginContainer'
 
@@ -33,6 +34,10 @@ export const Register: FC<Props> = props => {
     return <Redirect to="/" />
   }
 
+  const goToLogin = e => {
+    props.history.push({ pathname: `/login/default` })
+  }
+
   return (
     <LoginContainer
       title={lang.tr('admin.register')}
@@ -40,6 +45,7 @@ export const Register: FC<Props> = props => {
       error={error}
     >
       <RegisterForm onRegister={registerUser} />
+      <Button type="button" onClick={goToLogin} text={lang.tr('admin.signIn')} />
     </LoginContainer>
   )
 }

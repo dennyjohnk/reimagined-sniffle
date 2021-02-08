@@ -35,13 +35,7 @@ export const LoginContainer: FC<Props> = props => {
                 </div>
               </CardBody>
             </Card>
-            {props.poweredBy && (
-              <div className="homepage">
-                <p>
-                  {lang.tr('admin.poweredBy')} <a href="https://asista.com">Asista</a>
-                </p>
-              </div>
-            )}
+            {props.poweredBy && <div className="homepage"></div>}
           </div>
         </div>
       </Col>
