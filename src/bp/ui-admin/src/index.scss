@@ -201,22 +201,6 @@ pre.code {
   background: $dark-background;
 }
 
-// start custom css change
-
-.auth-image-slider-container {
-  background-color: #fff;
-}
-
-.no-padding {
-  padding: 0px;
-}
-
-.awssld {
-  --organic-arrow-color: #ffffff !important;
-  --loader-bar-color: transparent !important;
-}
-// end custom css change
-
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import './scss/_dropdown.scss';
 @import './scss/_layout.scss';
@@ -339,3 +323,4 @@ pre.code {
     }
   }
 }
+@import './_custom.scss';

@@ -8,7 +8,7 @@ import api from '~/api'
 import { getToken, REFRESH_INTERVAL, setToken, tokenNeedsRefresh } from '~/Auth'
 import WorkspaceSelect from '~/Pages/Components/WorkspaceSelect'
 
-import logo from '../media/logo_white.png'
+import logo from '../media/logo_white_asista.png'
 import { fetchLicensing } from '../reducers/license'
 import { fetchProfile } from '../reducers/user'
 import { fetchCurrentVersion } from '../reducers/versions'
@@ -98,7 +98,7 @@ const Header = () => (
       </Navbar.Group>
 
       <Navbar.Group align={Alignment.RIGHT}>
-        <WorkspaceSelect />
+        {/* <WorkspaceSelect /> */}
         <Navbar.Divider />
         <UserDropdownMenu />
       </Navbar.Group>

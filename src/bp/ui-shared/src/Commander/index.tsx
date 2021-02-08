@@ -22,9 +22,17 @@ const Commander: FC<CommanderProps> = props => {
       return
     }
 
-    const allowedShortcuts = [...props.shortcuts, ...getCommonShortcuts()].filter(
-      x => !x.permission || (x.permission && isOperationAllowed({ ...x.permission, user: props.user }))
-    )
+    /**
+     * Commenting the below line to remove permission restriciton
+     */
+
+    // const allowedShortcuts = [...props.shortcuts, ...getCommonShortcuts()].filter(
+    //   x => !x.permission || (x.permission && isOperationAllowed({ ...x.permission, user: props.user }))
+    // )
+
+    const allowedShortcuts = [...props.shortcuts, ...getCommonShortcuts()]
+
+    console.log('allowed shortcuts')
 
     const getLabel = (label: string, shortcutType: string) => {
       if (shortcutType === 'goto') {

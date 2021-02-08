@@ -1,0 +1,41 @@
+////////////////////
+// CUSTOM CSS FOR ADMIN
+////////////////////
+
+.auth-image-slider-container {
+  background-color: #fff;
+}
+
+.no-padding {
+  padding: 0px;
+}
+
+.awssld {
+  --organic-arrow-color: #ffffff !important;
+  --loader-bar-color: transparent !important;
+}
+
+.bp-sa-menu-gradient {
+  background-color: #4e73df;
+  background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+  background-size: cover;
+}
+
+.bp-sa-menu {
+  .label {
+    color: #fff;
+  }
+  .bp-sa-menu-item-active {
+    background-color: transparent;
+  }
+}
+
+.bp-sa-menu-item {
+  svg {
+    color: #fff !important;
+  }
+}
+
+.bp-sa-menu-header {
+  background-color: #fff;
+}

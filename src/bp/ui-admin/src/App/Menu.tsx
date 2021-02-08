@@ -79,8 +79,8 @@ const Menu: FC<MenuProps> = props => {
   }
 
   return (
-    <div className="bp-sa-menu">
-      <div className="bp-sa-menu-header">{lang.tr('admin.sideMenu.workspace')}</div>
+    <div className="bp-sa-menu bp-sa-menu-gradient">
+      {/* <div className="bp-sa-menu-header">{lang.tr('admin.sideMenu.workspace')}</div> */}
       <ControlGroup vertical={true} fill={true}>
         <MenuItem
           id="btn-menu-bots"
