@@ -35,7 +35,7 @@ export const Register: FC<Props> = props => {
   }
 
   const goToLogin = e => {
-    props.history.push({ pathname: `/login/default` })
+    props.history.push({ pathname: `/login` })
   }
 
   return (

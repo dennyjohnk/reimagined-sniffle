@@ -62,9 +62,10 @@ export default class AuthService {
   }
 
   async isFirstUser() {
-    return (await this.getAllUsers()).length === 0
+    // return (await this.getAllUsers()).length === 0
 
     //change this to create multiple accounts
+    return true
   }
 
   async getAllUsers() {
@@ -194,9 +195,9 @@ export default class AuthService {
   }
 
   private async _createFirstUser(user: Partial<StrategyUser>, strategy: string): Promise<StrategyUser> {
-    if (!(await this.isFirstUser())) {
-      throw new Error('Only the first user can be created from this method.')
-    }
+    // if (!(await this.isFirstUser())) {
+    //   throw new Error('Only the first user can be created from this method.')
+    // }
 
     const createdUser = await this.users.createUser({
       email: user.email!,

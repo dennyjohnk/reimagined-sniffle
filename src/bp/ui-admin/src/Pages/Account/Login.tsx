@@ -96,11 +96,11 @@ const Login: FC<Props> = props => {
       return (window.location.href = `${api.getApiPath()}/auth/redirect/${strategyType}/${strategyId}`)
     }
 
-    if (isFirstUser) {
-      props.history.push({ pathname: '/register', state: { registerUrl } })
-    } else {
-      setLoginUrl(strategy.loginUrl!)
-    }
+    // if (isFirstUser) {
+    //   props.history.push({ pathname: '/register', state: { registerUrl } })
+    // } else {
+    //   setLoginUrl(strategy.loginUrl!)
+    // }
   }
 
   const loginUser = async (email: string, password: string) => {
