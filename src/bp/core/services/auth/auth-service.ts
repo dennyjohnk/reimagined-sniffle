@@ -62,8 +62,8 @@ export default class AuthService {
   }
 
   async isFirstUser() {
-    return (await this.getAllUsers()).length === 0
-
+    //return (await this.getAllUsers()).length === 0
+    return true
     //change this to create multiple accounts
   }
 

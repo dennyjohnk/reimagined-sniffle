@@ -12,6 +12,8 @@ import { LoginContainer } from '../Layouts/LoginContainer'
 import { AuthMethodPicker } from './AuthMethodPicker'
 import { LoginForm } from './LoginForm'
 
+import { Button } from '@blueprintjs/core'
+
 type Props = {
   auth: BasicAuthentication
 } & RouteComponentProps<{ strategy: string; workspace: string }> &
@@ -24,6 +26,8 @@ const Login: FC<Props> = props => {
   const [loginUrl, setLoginUrl] = useState('')
   const [redirectTo, setRedirectTo] = useState<string>()
   const [error, setError] = useState<string | null>()
+
+  const registerUrl = '/register/basic/default'
 
   useEffect(() => {
     onStrategyChanged()
@@ -97,7 +101,9 @@ const Login: FC<Props> = props => {
     }
 
     if (isFirstUser) {
-      props.history.push({ pathname: '/register', state: { registerUrl } })
+      // props.history.push({ pathname: '/register', state: { registerUrl } })
+      // console.log(registerUrl)
+      setLoginUrl(strategy.loginUrl!)
     } else {
       setLoginUrl(strategy.loginUrl!)
     }
@@ -116,6 +122,13 @@ const Login: FC<Props> = props => {
     }
   }
 
+  const goTosignIn = e => {
+    e.preventDefault()
+
+    console.log('ok')
+    props.history.push({ pathname: '/register', state: { registerUrl } })
+  }
+
   if (isLoading || !strategies) {
     return null
   }
@@ -123,7 +136,16 @@ const Login: FC<Props> = props => {
   return (
     <LoginContainer title={lang.tr('admin.login')} error={error} poweredBy={true}>
       {loginUrl ? (
-        <LoginForm onLogin={loginUser} />
+        <div>
+          <LoginForm onLogin={loginUser} />
+          <Button
+            tabIndex={4}
+            type="button"
+            id="btn-signin"
+            text={lang.tr('admin.createAccount')}
+            onClick={goTosignIn}
+          />
+        </div>
       ) : (
         <AuthMethodPicker strategies={strategies} onStrategySelected={updateUrlStrategy} />
       )}
