@@ -141,9 +141,9 @@ export class AuthRouter extends CustomRouter {
       this.asyncMiddleware(async (req: RequestWithUser, res) => {
         const { email, strategy, isSuperAdmin } = req.tokenUser!
 
-        if (!isSuperAdmin) {
-          return res.send(await this.workspaceService.getUserWorkspaces(email, strategy))
-        }
+        // if (!isSuperAdmin) {
+        //   return res.send(await this.workspaceService.getUserWorkspaces(email, strategy))
+        // }
 
         res.send(
           await Promise.map(this.workspaceService.getWorkspaces(), w => {

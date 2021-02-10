@@ -74,7 +74,15 @@ class Bots extends Component<Props> {
     this.props.fetchBots()
     this.props.fetchBotHealth()
 
-    if (!this.props.modules.length && this.props.profile && this.props.profile.isSuperAdmin) {
+    /**
+     *
+     * Removing the super admin check
+     */
+    // if (!this.props.modules.length && this.props.profile && this.props.profile.isSuperAdmin) {
+    //   this.props.fetchModules()
+    // }
+
+    if (!this.props.modules.length && this.props.profile) {
       this.props.fetchModules()
     }
 
