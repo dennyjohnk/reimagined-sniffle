@@ -52,7 +52,7 @@ const Menu: FC<MenuProps> = props => {
     }
 
     return (
-      <AccessControl resource={resource} operation={operation} superAdmin={superAdmin} key={text}>
+      <AccessControl resource={resource} operation={operation} superAdmin={false} key={text}>
         <div
           id={id}
           className={cx('bp-sa-menu-item', { ['bp-sa-menu-item-active']: active })}
@@ -97,7 +97,6 @@ const Menu: FC<MenuProps> = props => {
           url="/workspace/:workspaceId?/users"
           resource="admin.collaborators.*"
           operation="read"
-          isPro={true}
         />
 
         <MenuItem
@@ -107,7 +106,6 @@ const Menu: FC<MenuProps> = props => {
           url="/workspace/:workspaceId?/roles"
           resource="admin.roles.*"
           operation="read"
-          isPro={true}
         />
 
         <MenuItem

@@ -120,6 +120,17 @@ export class ConfigProvider {
     }
   }
 
+  async addSuperAdminRef(email: any, strategy: string): Promise<void> {
+    this._botpressConfigCache = undefined
+    const botPressConfig = await this.ghostService
+      .global()
+      .readFileAsObject<BotpressConfig>('/', 'botpress.config.json')
+    const userData = { email: email, strategy: strategy }
+    botPressConfig.superAdmins.push(userData)
+
+    await this.ghostService.global().upsertFile('/', 'botpress.config.json', stringify(botPressConfig))
+  }
+
   async getBotConfig(botId: string): Promise<BotConfig> {
     return this.getConfig<BotConfig>('bot.config.json', botId)
   }

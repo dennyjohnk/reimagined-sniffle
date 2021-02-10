@@ -21,6 +21,7 @@ export type AccessControlProps = {
 export const isOperationAllowed = (params: PermissionAllowedProps) => {
   // @ts-ignore
   const profile = store.getState().user.profile
+
   if (!profile) {
     return false
   }

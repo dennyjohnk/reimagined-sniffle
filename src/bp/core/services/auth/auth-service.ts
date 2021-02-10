@@ -13,6 +13,7 @@ import jsonwebtoken from 'jsonwebtoken'
 import _ from 'lodash'
 import moment from 'moment'
 import ms from 'ms'
+import { Ghost } from 'core/app'
 
 import { AuthPayload, AuthStrategyConfig, ChatUserAuth, TokenUser } from '../../../common/typings'
 import { Resource } from '../../misc/resources'
@@ -206,7 +207,10 @@ export default class AuthService {
       attributes: user.attributes || {}
     })
 
-    await this.configProvider.mergeBotpressConfig({ superAdmins: [{ email: user.email, strategy }] })
+    await this.configProvider.addSuperAdminRef(user.email, strategy)
+
+    // await this.configProvider.mergeBotpressConfig({ superAdmins: [{ email: user.email, strategy }] })
+
     return createdUser.result
   }
 

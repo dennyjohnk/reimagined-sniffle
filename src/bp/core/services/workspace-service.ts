@@ -76,6 +76,20 @@ export class WorkspaceService {
     return this.save(workspaces.map(wks => (wks.id === workspaceId ? { ...wks, ...partialData } : wks)))
   }
 
+  async addAdminRef(botId: string, workspaceId: string): Promise<void> {
+    const workspaces = await this.getWorkspaces()
+    const workspace = workspaces.find(x => x.id === workspaceId)
+
+    if (!workspace) {
+      throw new Error(`Specified workspace "${workspaceId}" doesn't exist`)
+    }
+
+    if (!workspace.bots.includes(botId)) {
+      workspace.bots.push(botId)
+    }
+    return this.save(workspaces)
+  }
+
   async addBotRef(botId: string, workspaceId: string): Promise<void> {
     const workspaces = await this.getWorkspaces()
     const workspace = workspaces.find(x => x.id === workspaceId)
